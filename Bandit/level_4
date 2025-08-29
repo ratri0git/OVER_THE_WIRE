@@ -1,0 +1,10 @@
+Level Goal
+
+The password for the next level is stored in a hidden file in the inhere directory.
+
+
+Solution
+
+cd inhere
+ls -la
+cat ./...Hiding-From-You
