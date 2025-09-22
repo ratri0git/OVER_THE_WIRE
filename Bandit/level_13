@@ -1,0 +1,60 @@
+Level Goal
+
+The password for the next level is stored in the file data.txt, which is a hexdump of a file that has been repeatedly compressed. 
+For this level it may be useful to create a directory under /tmp in which you can work. Use mkdir with a hard to guess directory name. 
+Or better, use the command “mktemp -d”. Then copy the datafile using cp, and rename it using mv (read the manpages!)
+
+
+Solution
+
+xxd -d data.txt
+
+Script : 
+
+#!/bin/bash
+
+cd /tmp/tmp.XMJOEBYRae
+
+filename="data"
+
+echo "Started.."
+
+while true; do
+    ftype=$(file -b --mime-type "$filename")
+
+    case "$ftype" in
+        text/plain|text/x-ascii)
+            echo "Plain ASCII file found: $filename"
+            break
+            ;;
+
+        application/x-tar)
+            tar -xf "$filename"
+            rm -f "$filename"
+            ;;
+
+        application/gzip)
+            mv "$filename" "${filename}.gz"
+            gzip -d "${filename}.gz"
+            rm -f "${filename}.gz"
+            ;;
+
+        application/x-bzip2)
+            mv "$filename" "${filename}.bz2"
+            bunzip2 "${filename}.bz2"
+            rm -f "${filename}.bz2"
+            ;;
+
+        application/zip)
+            unzip "$filename"
+            rm -f "$filename"
+            ;;
+
+        *)
+            echo "Unsupported or unknown mime type: $ftype"
+            break
+            ;;
+    esac
+    filename=$(ls)
+
+done
