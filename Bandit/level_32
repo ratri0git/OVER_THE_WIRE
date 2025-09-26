@@ -1,0 +1,22 @@
+Level Goal
+
+There is a git repository at ssh://bandit31-git@localhost/home/bandit31-git/repo via the port 2220. 
+The password for the user bandit31-git is the same as for the user bandit31.
+Clone the repository and find the password for the next level.
+
+
+Solution
+
+cd /tmp
+mkdir bandit_30
+cd bandit_31
+git clone ssh://bandit31-git@localhost:2220/home/bandit31-git/repo 
+ls -la
+cd repo
+ls -la
+cat README.md
+echo 'May I come in?' > key.txt
+sed -i '/\.txt/d' .gitignore
+gir add key.txt
+git commit -m "Added key.txt"
+git push origin master
