@@ -1,0 +1,9 @@
+Level Goal
+
+hurry and grab the password for bandit27!
+
+
+Solution
+
+ls
+./bandit27-do cat /etc/bandit_pass/bandit27

@@ -1,0 +1,11 @@
+Level Goal
+
+The shell for user bandit26 is not /bin/bash, but something else. 
+Find out what it is, how it works and how to break out of it.
+
+
+Solution
+
+MAKE TERMINAL TOO SMALLER HEIGHT
+:set shell=/bin/bash
+:shell
