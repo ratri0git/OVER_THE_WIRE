@@ -1,4 +1,4 @@
-# OVER_THE_WIRE# OverTheWire: Cybersecurity Challenges
+# OverTheWire: Cybersecurity Challenges
 
 ## About
 Welcome to my OverTheWire wargame journey! This repo documents my progress in tackling cybersecurity challenges to sharpen my skills in Linux, networking, and ethical hacking. Currently, it includes my solutions for the Bandit wargame, with more wargames and challenges to be added as I progress. I'm a beginner driven to master these skills for a future in cybersecurity!
@@ -18,6 +18,7 @@ Welcome to my OverTheWire wargame journey! This repo documents my progress in ta
 ## Clone the Repo
 ```bash
 git clone https://github.com/ratri0git/OverTheWire.git
+```
 
 ## About Me
 I am driven pursue cybersecurity. This repo is setting the stage for ethical hacking and system security.
